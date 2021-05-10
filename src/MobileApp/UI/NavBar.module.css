@@ -1,0 +1,42 @@
+.navbar {
+  height: fit-content;
+}
+.navbarIcon {
+  height: 35px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-evenly;
+  margin: 20px 0 10px 15px;
+}
+.navbarIcon > * {
+  background-color: #333333;
+  height: 10%;
+  border-radius: 30%;
+}
+.navbarIcon :last-child {
+  width: 70%;
+}
+.dropMenu {
+  height: fit-content;
+}
+
+.completed,
+.pending,
+.important {
+  width: calc(100% - 15px);
+  height: fit-content;
+  font-size: 18px;
+  margin: 10px 0 10px 15px;
+  cursor: pointer;
+}
+.completed {
+  color: #5cb85c;
+}
+.pending {
+  color: #d9534f;
+}
+.important {
+  color: #0275d8;
+}

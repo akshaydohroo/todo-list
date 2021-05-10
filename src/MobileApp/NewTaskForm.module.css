@@ -1,0 +1,135 @@
+label{
+  color: #9d9c9d;
+}
+input::placeholder{
+  color: #9d9c9d;
+}
+
+.taskform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 11vh);
+  justify-content: space-between;
+}
+.taskform > div {
+  width: calc(200px + 20vw);
+}
+.taskTitle {
+  height: calc(30px + 12vh + 2.5vw);
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #e3e2e3;
+  caret-color: #5786ff;
+  font-size: calc(16px + 2vh + 1.5vw);
+  font-weight: 400;
+}
+.taskTitle:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #5786ff;
+}
+.labelTitle {
+  height: fit-content;
+  width: fit-content;
+  align-self: flex-start;
+  color: #9d9c9d;
+  margin-bottom: 15px;
+}
+.tileWrap {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.taskContent {
+  height: calc(150px + 7vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.taskContent > * {
+  display: flex;
+  height: fit-content;
+}
+.taskContent > div > div {
+  height: calc(25px + 1vw);
+  font-size: calc(12px + 0.5vw);
+  display: flex;
+  align-items: center;
+}
+.taskContent > div > input{
+    font-size: calc(14px + 0.5vw);
+    
+}
+.taskContent > div > label > * {
+  font-size: calc(14px + 0.5vw);
+}
+.taskContent > div > label,
+.dateLabel {
+  width: calc(25px + 1vw);
+  order: -1;
+}
+.taskContent > div > input {
+  width: 100%;
+}
+.taskContent > div > input:focus {
+  border-bottom: 2px solid #5786ff;
+}
+.taskContent > div > input:focus ~ label > * {
+  color: #5786ff;
+}
+.dateLabel {
+    display: flex;
+    align-items: center;
+}
+.dateinput,
+.timeinput {
+  font-size: calc(12px + 0.5vw);
+}
+.timeinput{
+    width: 100%;
+}
+.impLabel{
+  width: fit-content !important;
+}
+.impLabel>span{
+  margin-left: calc(10px + 0.4vw);
+}
+.impInput{
+  height: 100%;
+  width: 30px !important;
+  margin-left: calc(10px + 0.4vw);
+}
+.addTask {
+  height: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: larger;
+  font-weight: 300;
+  width: 100%;
+  background-color: #5787fe;
+  z-index: 3;
+  position: relative;
+  top: calc(3px + 0.5vh);
+}
+.addTask:focus,.addTask:hover{
+  box-shadow: 0.5rem -0.5rem 10px #d8dff1;
+  border: solid 2px lightblue;
+}
+@media screen and (min-width:768px) {
+  .addTask{
+    width: calc(375px + 20vw);
+  }
+}
+.errStyle{
+  width: fit-content;
+  height: fit-content;
+  align-self: flex-start;
+  color: #d9534f;
+  font-size: calc(12px + 0.5vw);
+}
+.errinp{
+  border-bottom: 2px solid #d9534f !important;
+}

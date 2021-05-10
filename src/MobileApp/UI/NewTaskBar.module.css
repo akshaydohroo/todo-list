@@ -1,0 +1,29 @@
+.taskbar {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  color: #323233;
+  font-weight: 300;
+  font-size: calc(18px + 0.8vw);
+  text-shadow: 1px 1px 1px #9a9a9b;
+}
+.close {
+  position: absolute;
+  right: calc(10px + 1vw);
+  height: calc(15px + 0.5vw);
+  width: calc(15px + 0.5vw);
+  cursor: pointer;
+}
+.icon {
+  mask: url("./closeIcon.svg");
+  display: inline-block;
+  background: #323233;
+  mask-size: cover;
+  box-shadow: 1px 1px 1px #9a9a9b;
+}

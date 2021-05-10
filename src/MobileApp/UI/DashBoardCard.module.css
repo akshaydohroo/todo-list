@@ -1,0 +1,31 @@
+.icon{
+   font-size: calc(20px + 3vw); 
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: calc(120px + 8vw);
+    width: calc(120px + 8vw);
+}
+.content>*{
+    text-decoration: none;
+    margin-left: calc(14px + 1vw);
+    margin-top: calc(12px + 1vw);
+}
+.category{
+    font-weight: 400;
+    font-size: calc(16px + 0.5vw);
+    width: fit-content;
+    height: fit-content;
+}
+.remaining{
+    font-size: calc(12px + 0.3vw);
+    color: #b7b6b6;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    bottom: calc(14px + 1.5vw);
+}
+
+  

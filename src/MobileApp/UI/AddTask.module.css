@@ -1,0 +1,24 @@
+.button {
+  position: absolute;
+  height: calc(60px + 2vw);
+  width: calc(60px + 2vw);
+  border-radius: 50%;
+  background-color: #5786ff;
+  bottom: 3vh;
+  right: 5vw;
+  cursor: pointer;
+}
+.button > span {
+  mask: url("./addIcon.svg");
+  display: inline-block;
+  width: calc(30px + 1vw);
+  height: calc(30px + 1vw);
+  background: white;
+  mask-size: cover;
+}
+
+.icon {
+  fill: white;
+  height: 52px;
+  width: 52px;
+}

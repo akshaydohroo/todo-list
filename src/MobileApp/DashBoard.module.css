@@ -1,0 +1,42 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  background-color: #fdfdfc;
+}
+
+.title {
+  height: fit-content;
+  width: calc(100% - 15px);
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+.dashboard-content {
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #f8f9f9;
+  padding-top: calc(10px + 1vw);
+  box-shadow: 0px -1px 5px rgb(255, 255, 255),0px -2px 5px rgb(230, 228, 234);
+  
+}
+.delCategory {
+  position: absolute;
+  top: calc(0.5px + 1vw);
+  right: calc(4px + 1vw);
+  height: calc(7px + 0.5vw);
+  width: calc(7px + 0.5vw);
+  cursor: pointer;
+}
+.delIcon {
+  mask: url("./UI/closeIcon.svg");
+  display: inline-block;
+  background: #323233;
+  mask-size: cover;
+  box-shadow: 1px 1px 1px #9a9a9b;
+}
