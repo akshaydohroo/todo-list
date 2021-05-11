@@ -31,10 +31,6 @@ function addNewTaskInDataBase(setData, dataObj) {
       sortCategoryData(newAllCategory);
       newData["all"] = newAllCategory;
       return newData;
-      // oldData["all"].push({...dataObj.newTask});
-      // sortCategoryData(oldData["all"]);
-      // console.log({...oldData});
-      // return { ...oldData };
     });
   } else {
     setData((oldData) => {
@@ -64,7 +60,6 @@ function delCategory(category,setData){
 }
 const App = () => {
   let [data, setData] = React.useState(initial_data);
-  // let {imptask,setimptask} = React.useState({});
   React.useEffect(() => {
     console.log(data);
   }, [data]);

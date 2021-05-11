@@ -1,0 +1,38 @@
+
+.backButton {
+  position: absolute;
+  height: calc(18px + 0.1vw + 0.3vh);
+  width: calc(10px + 0.1vw + 0.3vh);
+  left: calc(15px + 0.5vh);
+  top: calc(20px + 0.5vh);
+  cursor: pointer;
+}
+.backButtonIcon {
+  mask: url("./line-angle-left.svg");
+  display: inline-block;
+  background: #fff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  box-shadow: 1px 1px 1px #9a9a9b;
+  height: 100%;
+  width: 100%;
+}
+
+.infoButton {
+  position: absolute;
+  height: calc(20px + 0.1vw + 0.3vh);
+  width: calc(8px + 0.1vw + 0.3vh);
+  right: calc(15px + 0.5vh);
+  top: calc(17px + 0.5vh);
+  cursor: pointer;
+}
+.infoButtonIcon {
+  mask: url("./ellipsis-v.svg");
+  display: inline-block;
+  background: #fff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  box-shadow: 1px 1px 1px #9a9a9b;
+  height: 100%;
+  width: 100%;
+}

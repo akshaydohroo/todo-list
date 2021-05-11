@@ -39,4 +39,6 @@
   background: #323233;
   mask-size: cover;
   box-shadow: 1px 1px 1px #9a9a9b;
+  height: calc(7px + 0.5vw);
+  width: calc(7px + 0.5vw);
 }

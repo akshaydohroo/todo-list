@@ -13,9 +13,7 @@ const DashBoard = (props) => {
           : ""
       }\nNote: This Action is irreversible and all the todos defined in this category will be lost.`
     );
-    if(x)
-    props.setDataHandler({ category: category, verb: "del" });
-    else console.log("refused");
+    if (x) props.setDataHandler({ category: category, verb: "del" });
   };
   let countNotDone = {};
   function numOfTaskRemaining(data) {
@@ -26,6 +24,13 @@ const DashBoard = (props) => {
     countNotDone[data] = count;
     return count;
   }
+  let allTaskNotDne = (data) => {
+    let count = 0;
+    Object.keys(data).forEach((category) => {
+      count += data[category].length;
+    });
+    return count;
+  };
   return (
     <>
       <div className={styles.dashboard}>
@@ -47,7 +52,11 @@ const DashBoard = (props) => {
               )}
               <DashBoardCard
                 category={category}
-                notDone={numOfTaskRemaining(category)}
+                notDone={
+                  category === "all"
+                    ? allTaskNotDne(props.data)
+                    : numOfTaskRemaining(category)
+                }
               />
             </LinkCard>
           ))}

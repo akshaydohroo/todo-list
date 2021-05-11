@@ -2,7 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faStickyNote } from "@fortawesome/free-regular-svg-icons";
 import { faTag, faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import DataListCategory from "./UI/DataListCategory";
 import styles from "./NewTaskForm.module.css";
 
 export default function NewTaskFormCompnents(props) {
@@ -112,11 +111,13 @@ export default function NewTaskFormCompnents(props) {
             name="taskCategory"
             onChange={onChangeHandler}
             value={props.taskData.taskCategory}
+            list={props.datalistCatgory}
+            autoComplete="off"
           />
-          <DataListCategory />
           <label htmlFor="tag" className={styles.tagLabel}>
             <FontAwesomeIcon icon={faTag} className={styles.tagIcon} />
           </label>
+          {props.children}
         </div>
         <small className={styles.errStyle}>{props.err.taskCategory}</small>
 

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./NewTaskForm.module.css";
 import NewTaskFormCompnents from "./NewTaskFormCompnents";
-import {Redirect,withRouter} from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
+import DataListCategory from "./UI/DataListCategory";
 let datetime = new Date();
 datetime = (function (date) {
   var tzo = -date.getTimezoneOffset(),
@@ -41,7 +41,7 @@ let taskObj = Object.freeze({
   isImportant: false,
 });
 export default function NewTaskForm(props) {
-  let[isRedirect , setRedirect] = React.useState(false);
+  let [isRedirect, setRedirect] = React.useState(false);
   let [err, setErr] = React.useState({});
   let [taskData, setTaskData] = React.useState(taskObj);
   const formSubmitHandler = (event) => {
@@ -70,26 +70,49 @@ export default function NewTaskForm(props) {
       });
       isFormOk = false;
     }
-    // if(taskData.isImportant){
-    //   Object.keys(props.data).forEach((key)=>{
-        
-    //   })
-    // }
-    if(isFormOk){
-      props.setDataHandler({newTask:{...taskData},verb:"add"});
+    if (taskData.isImportant) {
+      Object.keys(props.data).forEach((key) => {
+        let shouldBreak = false;
+        props.data[key].forEach((task) => {
+          // can implement binary search here because data is sorted
+          // but i wont implement it because i am tired
+
+          if (
+            task.taskDate === taskData.taskDate &&
+            task.taskTime === taskData.taskTime &&
+            task.isImportant
+          ) {
+            window.alert(
+              `Priority conflict\nThere is already an important todo dated at ${task.taskDate} timed on ${task.taskTime} with the name of ${task.taskTitle}`
+            );
+            isFormOk = false;
+            return false;
+          }
+        });
+        if (shouldBreak) return false;
+      });
+    }
+    if (isFormOk) {
+      props.setDataHandler({ newTask: { ...taskData }, verb: "add" });
       setRedirect(true);
-    } 
+    }
   };
-  if(!isRedirect)
-  return (
-    <form className={styles.taskform} onSubmit={formSubmitHandler}>
-      <NewTaskFormCompnents
-        taskData={taskData}
-        setTaskData={setTaskData}
-        err={err}
-        date={date}
-      />  
-    </form>
-  );
-  else return <Redirect to="/"/>
+  if (!isRedirect)
+    return (
+      <form className={styles.taskform} onSubmit={formSubmitHandler}>
+        <NewTaskFormCompnents
+          taskData={taskData}
+          setTaskData={setTaskData}
+          err={err}
+          date={date}
+          datalistCatgory="categoryList"
+        >
+          <DataListCategory
+            options={Object.keys(props.data)}
+            id="categoryList"
+          />
+        </NewTaskFormCompnents>
+      </form>
+    );
+  else return <Redirect to="/" />;
 }

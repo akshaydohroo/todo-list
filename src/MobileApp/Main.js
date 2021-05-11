@@ -21,7 +21,12 @@ const Main = (props) => {
         <Route
           exact
           path="/:category"
-          render={(params) => <Category {...params} {...props} />}
+          render={(params) => {
+            let data = props.data;
+            if (params.match.params.category !== "all")
+              data = data[params.match.params.category];
+            return <Category {...params} {...props} data={data} />;
+          }}
         />
       </Switch>
       <Line />
