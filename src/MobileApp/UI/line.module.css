@@ -3,7 +3,7 @@
   width: 32%;
   background-color: #404041;
   border-radius: 15%;
-  position: absolute;
+  position: fixed;
   bottom: 1vh;
   left: 33.5vw;
   box-shadow: 0 1px 1px #969696;

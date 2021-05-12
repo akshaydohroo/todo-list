@@ -39,8 +39,8 @@ export default function CategoryNavbar(props) {
         <span className={styles.categoryIcon}>
           <FontAwesomeIcon
             className={styles.fontCategoryIcon}
-            icon={icons[props.category][0]}
-            color={icons[props.category][1]}
+            icon={icons.hasOwnProperty(props.category)?icons[props.category][0]:icons["other"][0]}
+            color={icons.hasOwnProperty(props.category)?icons[props.category][1]:icons["other"][1]}
           />
         </span>
         <span className={styles.categoryName}>

@@ -1,0 +1,90 @@
+.categoryTask {
+  display: flex;
+  align-items: center;
+}
+.categoryTask.done{
+  opacity: 0.5;
+}
+.taskContent {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  font-size: calc(12px + 0.5vw + 0.5vh);
+}
+
+.taskTitle {
+  height: fit-content;
+  color: #333333;
+  margin-bottom: calc(5px + 0.1vw + 0.1vh);
+  margin-top: calc(10px + 0.5vw + 0.5vh);
+}
+.taskTitle.done{
+  color: #0275d8 !important;
+  text-decoration: line-through solid #0275d8;
+}
+.dueDate {
+  font-size: smaller;
+  color: #767676;
+}
+.btngroup {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  align-items: center;
+  height: calc(30px + 1.5vh + 1vw);
+  position: relative;
+  top: calc(1vh + 0.5vw);
+  justify-content: space-around;
+}
+.doneControl {
+  width: 20%;
+  height: calc(10px + 0.5vw + 0.5vh);
+  border-radius: 10%;
+  border-color: #dfdfdf;
+  outline-color: #dfdfdf;
+}
+.cancelTask {
+  height: calc(7px + 0.5vw + 0.5vh);
+  width: calc(7px + 0.5vw + 0.5vh);
+  cursor: pointer;
+}
+
+.cancelIcon {
+  mask: url("../closeIcon.svg");
+  display: inline-block;
+  background: #dfdfdf;
+  mask-size: cover;
+  box-shadow: 1px 1px 1px #9a9a9b;
+}
+.dropIcon {
+  transform: rotate(-90deg);
+  mask: url("./line-angle-left.svg");
+  display: inline-block;
+  background: #dfdfdf;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  box-shadow: 1px 1px 1px #9a9a9b;
+}
+.openNote {
+  height: calc(7px + 0.6vw + 0.6vh);
+  width: calc(7px + 0.6vw + 0.6vh);
+  cursor: pointer;
+}
+.openNote:hover .dropIcon,
+.openNote:active .dropIcon {
+  background-color: #0275d8;
+}
+.cancelTask:hover .cancelIcon,
+.cancelTask:active .cancelIcon {
+  background-color: #d9534f;
+}
+.doneControl:hover,
+.doneControl:focus {
+  border-color: #0275d8;
+  outline-color: #0275d8;
+}
+.note{
+  font-size: smaller;
+  color: #9a9a9b;
+  margin-top: 10px;
+}

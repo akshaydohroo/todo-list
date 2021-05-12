@@ -1,0 +1,13 @@
+.taskcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+.title {
+  height: fit-content;
+  width: 80%;
+  color: #a3a3a3;
+  font-size: calc(12px + 0.5vh + 0.5vw);
+  margin-top: calc(10px + 3vh);
+}

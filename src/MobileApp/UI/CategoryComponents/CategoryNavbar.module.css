@@ -9,7 +9,7 @@
   position: relative;
   left: 15vw;
   top: 13vh;
-  align-items: center;
+  align-items: flex-start;
 }
 .navbarContent > span {
   height: fit-content;
@@ -34,5 +34,4 @@
 .totalTask{
     font-size: calc(18px + 0.5vw);
     color: white;
-    align-self: flex-start;
 }

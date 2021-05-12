@@ -4,8 +4,8 @@ import { CSSTransition } from "react-transition-group";
 import classes from "./dropdown.module.css";
 export default function NavBar() {
   let [isDrop, setDrop] = React.useState(true);
-  
-  const nodeRef = React.useRef(null)
+
+  const nodeRef = React.useRef(null);
   return (
     <nav className={styles.navbar}>
       <div
@@ -28,9 +28,33 @@ export default function NavBar() {
         classNames={{ ...classes }}
       >
         <div className={styles["dropMenu"]} ref={nodeRef}>
-          <div className={styles.completed}>Completed</div>
-          <div className={styles.pending}>Pending</div>
-          <div className={styles.important}>Important</div>
+          <div
+            className={styles.completed}
+            onClick={() => {
+              window.location.href =
+                "https://weather-app-by-akshay-dohroo.netlify.app/";
+            }}
+          >
+            Weather App
+          </div>
+          <div
+            className={styles.pending}
+            onClick={() => {
+              window.location.href =
+                "https://akshay-dohroo-covid-19-app.netlify.app/";
+            }}
+          >
+            Covid Tracker App
+          </div>
+          <div
+            className={styles.important}
+            onClick={() => {
+              window.location.href =
+                "https://akshay-dohroo-portfolio-v1.netlify.app/";
+            }}
+          >
+            My Portfolio
+          </div>
         </div>
       </CSSTransition>
     </nav>

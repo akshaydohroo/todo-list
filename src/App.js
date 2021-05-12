@@ -11,6 +11,35 @@ var initial_data = {
   work: [],
   home: [],
 };
+function delTaskFromCategory(category, id, setData) {
+  setData((oldData) => {
+    let newData = { ...oldData };
+    let categoryData = [];
+    oldData[category].forEach((item) => {
+      if (item.id !== id) categoryData.push(item);
+    });
+    newData[category] = categoryData;
+    return newData;
+  });
+}
+function modTaskFromCategory(category, id, setData) {
+  setData((oldData) => {
+    let newData = { ...oldData };
+    let categoryData = [];
+    oldData[category].forEach((item) => {
+      if (item.id === id) {
+        let newItem = {...item};
+        newItem.done = !item.done;
+        categoryData.push(newItem);
+      }
+      else categoryData.push(item);
+    });
+    console.log(categoryData);
+
+    newData[category] = categoryData;
+    return newData;
+  });
+}
 function sortCategoryData(data) {
   data.sort((o1, o2) => {
     if (o1.taskDate === o2.taskDate) {
@@ -51,12 +80,12 @@ function addNewTaskInDataBase(setData, dataObj) {
     });
   }
 }
-function delCategory(category,setData){
-  setData((oldData)=>{
-    let newData = {...oldData};
+function delCategory(category, setData) {
+  setData((oldData) => {
+    let newData = { ...oldData };
     delete newData[category];
     return newData;
-  })
+  });
 }
 const App = () => {
   let [data, setData] = React.useState(initial_data);
@@ -68,10 +97,15 @@ const App = () => {
       if (dataObj.verb === "add") {
         addNewTaskInDataBase(setData, dataObj);
       }
-    }
-    else if(dataObj.hasOwnProperty("category")){
-      if(dataObj.verb==="del"){
-        delCategory(dataObj.category,setData);
+    } else if (dataObj.hasOwnProperty("category")) {
+      if (dataObj.verb === "del") {
+        delCategory(dataObj.category, setData);
+      }
+    } else if (dataObj.taskId) {
+      if (dataObj.verb === "del") {
+        delTaskFromCategory(dataObj.delCategory, dataObj.taskId, setData);
+      } else if (dataObj.verb === "mod") {
+        modTaskFromCategory(dataObj.delCategory, dataObj.taskId, setData);
       }
     }
   };
