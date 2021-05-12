@@ -23,6 +23,11 @@ const Main = (props) => {
           path="/:category"
           render={(params) => {
             let data = props.data;
+            // if(params.match.params.category==="important"){
+            //   data = ()=>{
+                
+            //   }
+            // }
             if (params.match.params.category !== "all")
               data = data[params.match.params.category];
             return <Category {...params} {...props} data={data} />;
